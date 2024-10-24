@@ -1,47 +1,68 @@
 /* styles.css */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #faf9d7; /*Cream colour to complement green header and footer*/
-  margin: 16px;
+  background-color: #faf9d7; /* Cream color for the background */
+  margin: 0;  /* Remove margin around the body */
+  padding: 20px;  /* General padding around the page */
 }
 
 h1 {
+  font-family: 'Salsa', cursive;
   color: #333;
   text-align: center;
+  font-size: 50px;
 }
 
-h1 {
-    font-family: 'Salsa', cursive;
-    color: #333;
-    text-align: center;
-    font-size: 50px;
-  }
-  
-
-#vis1, #vis2 {
-  margin-top: 40px;
-  border: 1px solid #ddd;
-  padding: 20px;
-  background-color: #fff;
+p {
+  color: #333;
+  text-align: center;
+  font-size: 18px;
 }
+
+/* Ensures all visualizations are the same size and aligned properly */
+#vis1, #vis2, #vis3, #vis4, #vis5 {
+  width: 100%;  /* Full width */
+  max-width: 600px;  /* Consistent max width for all visualizations */
+  height: 400px;  /* Consistent height for all visualizations */
+  margin: 20px auto;  /* Center the visualizations with spacing */
+  padding: 0;  /* Remove any padding */
+  background-color: #fff;  /* Keep background white for consistency */
+  border: 1px solid #ddd;  /* Add a subtle border */
+  box-sizing: border-box;  /* Ensures padding/border don't affect overall width */
+}
+
+/* Optional: You can use .salsa-regular for special text styling */
 .salsa-regular {
-    font-family: "Salsa", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: 'Salsa', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
-/* Padding on all sides */
+/* Content padding for additional sections, if needed */
 .content {
-  padding: 20px; /* Adds 20px padding to the top, right, bottom, and left */
+  padding: 20px;
   background-color: lightgray;
 }
 
-/* Padding can also be set for individual sides */
-.content {
-  padding-top: 10px;    /* 10px padding on the top */
-  padding-right: 15px;  /* 15px padding on the right */
-  padding-bottom: 20px; /* 20px padding on the bottom */
-  padding-left: 25px;   /* 25px padding on the left */
+/* Optional: Global section styling to control spacing */
+.section {
+  padding: 0;
+  margin-bottom: 40px;
 }
 
-  
+/* Media queries to adjust layout on smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;  /* Smaller font for header on small screens */
+  }
+
+  p {
+    font-size: 16px;  /* Smaller font for paragraphs on small screens */
+  }
+
+  /* Reduce the size of visualizations on smaller screens */
+  #vis1, #vis2, #vis3, #vis4, #vis5 {
+    max-width: 100%;  /* Full width on small screens */
+    height: 300px;  /* Adjust height for smaller devices */
+  }
+}
