@@ -54,7 +54,7 @@ p {
 
 
 .limited-width {
-  max-width: 500px;  /* Adjust this width for roughly 10 words per line */
+  max-width: 700px;  /* Adjust this width for roughly 10 words per line */
   margin: 0 auto;    /* Center the text */
   line-height: 1.6;  /* Optional: Adjust line spacing */
   text-align: justify; /* Justify text for alignment */
