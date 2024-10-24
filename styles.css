@@ -10,13 +10,15 @@ h1 {
   text-align: center;
 }
 
-h1 {
-    font-family: 'Salsa', cursive;
-    color: #333;
-    text-align: center;
-    font-size: 50px;
-  }
-  
+
+  h1 {
+  font-family: 'Salsa', cursive;  /* Use Salsa font */
+  color: #333;  /* Adjust color if needed */
+  text-align: center;
+  font-size: 50px;  /* Adjust size as necessary */
+  margin-top: 20px;  /* Add margin to give space */
+}
+
 
 #vis1, #vis2 {
   margin-top: 40px;
