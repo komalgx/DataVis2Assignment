@@ -3,45 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>DATA VIS 2</title>
 
-  <!-- Loading necessary Vega and Vega-Lite libraries in the browser-->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <!-- Link to External CSS File -->
   <link rel="stylesheet" href="styles.css"> 
 
-  <!-- Link to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- Adding CSS for full-height sections -->
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 0;
-      overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-
-    /* Full-screen sections for each visualization */
-    .section {
-      height: 100vh; /* 100% of the viewport height */
-      display: flex;
-      align-items: center;
-      justify-content: center;
       padding: 20px;
-      box-sizing: border-box;
+      background-color: #f5f5dc;  /* Creamish background */
     }
 
-    /* Header and Footer styles */
+    .section {
+      display: block;
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 20px;
+    }
+
     .header, .footer {
-      background-color:  #3f6300; /* Foresty shade of Green */
+      background-color: #3f6300;
       color: white;
       padding: 20px;
       text-align: center;
@@ -63,17 +49,6 @@
       padding: 10px 20px;
       line-height: 1.5;
     }
-
-    /* Adjustments for smaller screens */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p {
-        padding: 5px 10px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -83,38 +58,46 @@
     <p>Understanding the Data Behind the Forests and Plantations in Australian States</p>
   </div>
 
-  
-  <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia, focusing on the major plantation types: hardwood and softwood. The charts illustrate how plantation areas vary across different states and time periods, providing insights into regional forestry practices and trends. With dynamic options to filter by year, these visualizations help to highlight significant changes in plantation sizes over the 2011-2014 period. This data sheds light on the sustainable management and growth of forest plantations, which play a crucial role in the country's forestry industry and environmental conservation efforts.</p>
+  <p>This collection of visualizations explores the distribution and evolution of plantation areas across Australia...</p>
 
-  <!-- Full-height container for each visualization -->
-  <div class="section" id="vis1"></div>
-  <div class="section" id="vis2"></div>
-  <div class="section" id="vis3"></div>
-  <div class="section" id="vis4"></div>
-  <div class="section" id="vis5"></div>
+  <!-- Descriptions and visualizations -->
+  <div class="section">
+    <p>This choropleth map shows the sales and service income for each state.</p>
+    <div id="vis1"></div>
+  </div>
+
+  <div class="section">
+    <p>This time series chart tracks the growth of softwood and hardwood plantations over time.</p>
+    <div id="vis2"></div>
+  </div>
+
+  <div class="section">
+    <p>This stacked area chart shows the volume of logs harvested in each state over the years.</p>
+    <div id="vis3"></div>
+  </div>
+
+  <div class="section">
+    <p>This bubble chart compares log volume, log value, and forest area across states.</p>
+    <div id="vis4"></div>
+  </div>
+
+  <div class="section">
+    <p>This donut chart shows each state's contribution to the total value of logs harvested.</p>
+    <div id="vis5"></div>
+  </div>
 
   <div class="footer">
     <p>Data Visualisation 2 Assignment | Author: Komal Gupta | Date: 22/10/2024</p>
     <p>Sources: https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools </p>
   </div>
 
-  <!-- Embedding the Vega-Lite visualizations -->
+  <!-- Embedding the visualizations -->
   <script type="text/javascript">
-    vegaEmbed('#vis1', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/MapFinal.json').then(function(result) {
-    }).catch(console.error);
-    
-    vegaEmbed('#vis2', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/TimeSeries_Final.json').then(function(result){  
-    }).catch(console.error);
-    
-    vegaEmbed('#vis3', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/StackedAreaChart.json').then(function(result){
-    }).catch(console.error);
-
-    vegaEmbed('#vis4', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/BubbleChart.json').then(function(result){
-    }).catch(console.error);
-
-    vegaEmbed('#vis5', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/DonutChart.json').then(function(result){
-    }).catch(console.error);
-
-</script>
+    vegaEmbed('#vis1', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/MapFinal.json').then(function(result) {}).catch(console.error);
+    vegaEmbed('#vis2', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/TimeSeries_Final.json').then(function(result) {}).catch(console.error);
+    vegaEmbed('#vis3', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/StackedAreaChart.json').then(function(result) {}).catch(console.error);
+    vegaEmbed('#vis4', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/BubbleChart.json').then(function(result) {}).catch(console.error);
+    vegaEmbed('#vis5', 'https://raw.githubusercontent.com/komalgx/DataVis2Assignment/refs/heads/main/DonutChart.json').then(function(result) {}).catch(console.error);
+  </script>
 </body>
 </html>
