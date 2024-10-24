@@ -1,5 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 380,
   "data": {
     "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/DonutChart.csv"
   },
