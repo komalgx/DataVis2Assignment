@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {"property": "features", "type": "json"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "values": [
+            {"state": "New South Wales", "value": 41786},
+            {"state": "Victoria", "value": 33164},
+            {"state": "Queensland", "value": 24319},
+            {"state": "South Australia", "value": 8985},
+            {"state": "Western Australia", "value": 10960},
+            {"state": "Tasmania", "value": 3501},
+            {"state": "Northern Territory", "value": 166},
+            {"state": "Australian Capital Territory", "value": 992}
+          ]
+        },
+        "key": "state",
+        "fields": ["value"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Service and Sales Income ($M)",
+      "scale": {"scheme": "greens"}
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State"},
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Service and Sales Income ($M)"
+      }
+    ]
+  },
+  "config": {}
+}

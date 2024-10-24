@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/StackedAreaChart.csv"
+  },
+  "mark": "area",
+  "encoding": {
+    "x": {
+      "timeUnit": "year",
+      "field": "Year",
+      "type": "temporal",
+      "axis": {"title": "Year", "format": "%Y"}
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Volume of Logs Harvested (m^3)",
+      "type": "quantitative",
+      "stack": "zero",
+      "axis": {"title": "Volume of Logs Harvested (m³)"}
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "ACT"
+        ],
+        "range": [
+          "#006400",
+          "#228B22",
+          "#32CD32",
+          "black",
+          "grey",
+          "#800000",
+          "#8B4513",
+          "#D3D3D3"
+        ]
+      },
+      "legend": {"title": "State"}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State"},
+      {
+        "field": "Year",
+        "type": "temporal",
+        "title": "Year",
+        "timeUnit": "year"
+      },
+      {
+        "field": "Volume of Logs Harvested (m^3)",
+        "type": "quantitative",
+        "title": "Volume of Logs (m³)"
+      }
+    ]
+  },
+  "config": {}
+}

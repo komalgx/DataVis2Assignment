@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/DonutChart.csv"
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": "2011-12",
+      "bind": {
+        "input": "select",
+        "options": [
+          "2011-12",
+          "2012–13",
+          "2013–14",
+          "2014–15",
+          "2015–16",
+          "2016–17",
+          "2017–18",
+          "2018–19",
+          "2019–20",
+          "2020–21",
+          "2021–22"
+        ],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.Year == selectedYear"}],
+  "mark": {"type": "arc", "innerRadius": 50, "outerRadius": 100},
+  "encoding": {
+    "theta": {"field": "Value", "type": "quantitative"},
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "ACT"
+        ],
+        "range": [
+          "#006400",
+          "#228B22",
+          "#32CD32",
+          "black",
+          "grey",
+          "#800000",
+          "#8B4513",
+          "#D3D3D3"
+        ]
+      },
+      "legend": {"title": "State"}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State"},
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Value of Logs Harvested ($M AUD)"
+      }
+    ]
+  },
+  "config": {}
+}

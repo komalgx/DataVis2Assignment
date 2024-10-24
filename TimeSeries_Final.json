@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/DV2_TimeSeriesData_A.csv"
+  },
+  "params": [
+    {
+      "name": "forestType",
+      "value": "Hardwood",
+      "bind": {
+        "input": "select",
+        "options": ["Softwood", "Hardwood"],
+        "name": "Select Forest Type: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum['Forest Type'] == forestType"}],
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal", "axis": {"title": "Year"}},
+        "y": {
+          "field": "Forest Area (ha)",
+          "type": "quantitative",
+          "axis": {"title": "Forest Area ('000 ha)"}
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "New South Wales",
+              "Victoria",
+              "Queensland",
+              "South Australia",
+              "Western Australia",
+              "Tasmania",
+              "Northern Territory",
+              "ACT"
+            ],
+            "range": [
+              "#006400",
+              "#228B22",
+              "#32CD32",
+              "black",
+              "grey",
+              "#800000",
+              "#8B4513",
+              "#D3D3D3"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": {"type": "point", "opacity": 0, "size": 100},
+      "encoding": {
+        "x": {"field": "Year", "type": "temporal"},
+        "y": {"field": "Forest Area (ha)", "type": "quantitative"},
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "Forest Type", "type": "nominal", "title": "Forest Type"},
+          {"field": "Year", "type": "temporal", "title": "Year"},
+          {
+            "field": "Forest Area (ha)",
+            "type": "quantitative",
+            "title": "Forest Area ('000 ha)"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}

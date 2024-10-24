@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 350,
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2012,
+      "bind": {
+        "input": "select",
+        "options": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "data": {
+    "url": "https://raw.githubusercontent.com/komalgx/Data-Vis-2/refs/heads/main/BubbleChart.csv"
+  },
+  "transform": [{"filter": "datum.Year == selectedYear"}],
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Log Volume (m^3)",
+      "type": "quantitative",
+      "axis": {"title": "Log Volume (m³)"}
+    },
+    "y": {
+      "field": "Log Value ($M AUD)",
+      "type": "quantitative",
+      "axis": {"title": "Log Value (AUD)"}
+    },
+    "size": {
+      "field": "Hardwood Sawnwood Production (\\'000 m^3)",
+      "type": "quantitative",
+      "scale": {"range": [500, 4000]},
+      "legend": {"title": "Hardwood Sawnwood Production ('000 m³)"}
+    },
+    "color": {
+      "field": "State",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Tasmania",
+          "Northern Territory",
+          "ACT"
+        ],
+        "range": [
+          "#006400",
+          "#228B22",
+          "#32CD32",
+          "black",
+          "grey",
+          "#800000",
+          "#8B4513",
+          "#D3D3D3"
+        ]
+      },
+      "legend": {"title": "State", "orient": "right", "symbolSize": 50}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State"},
+      {
+        "field": "Log Volume (m^3)",
+        "type": "quantitative",
+        "title": "Log Volume (m³)"
+      },
+      {
+        "field": "Log Value ($M AUD)",
+        "type": "quantitative",
+        "title": "Log Value (AUD)"
+      },
+      {
+        "field": "Hardwood Sawnwood Production (\\'000 m^3)",
+        "type": "quantitative",
+        "title": "Hardwood Sawnwood Production ('000 m³)"
+      }
+    ]
+  },
+  "config": {}
+}
