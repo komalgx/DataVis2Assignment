@@ -84,4 +84,36 @@ h1 {
   }
 }
 
+/* Container for the two-column text */
+.split-text-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1000px; /* Adjust as necessary */
+}
+
+/* Left and right sections of the text */
+.split-text-container .left, .split-text-container .right {
+  width: 48%;  /* Each section takes up 48% to allow for some space in between */
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: justify;  /* For a cleaner layout */
+}
+
+.split-text-container .right {
+  padding-left: 20px;  /* Add space between the two sections */
+}
+
+@media (max-width: 768px) {
+  /* For smaller screens, stack the text vertically */
+  .split-text-container {
+    flex-direction: column;
+  }
+
+  .split-text-container .left, .split-text-container .right {
+    width: 100%;  /* Full width on mobile */
+    padding-left: 0;
+  }
+}
+
   
