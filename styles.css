@@ -38,5 +38,25 @@ h1 {
   padding-bottom: 15px; 
   padding-left: 25px;   
 }
+/* Background colors for each visualization */
+#vis1 {
+  background-color: #faebd7;  /* Antique white */
+}
+
+#vis2 {
+  background-color: #faebd7;  /* Antique white */
+}
+
+#vis3 {
+  background-color: #faebd7;  /* Antique white */
+}
+
+#vis4 {
+  background-color: #faebd7;  /* Antique white */
+}
+
+#vis5 {
+  background-color: #faebd7;  /* Antique white */
+}
 
   
