@@ -4,23 +4,16 @@ body {
   background-color: #faf9d7; /*Cream colour to complement green header and footer*/
   margin: 16px;
 }
-
-h1 {
-  color: #333;
-  text-align: center;
-}
-
-
   h1 {
   font-family: 'Salsa', cursive;  /* Use Salsa font */
   color: #333;  /* Adjust color if needed */
   text-align: center;
-  font-size: 50px;  /* Adjust size as necessary */
+  font-size: 70px;  /* Adjust size as necessary */
   margin-top: 20px;  /* Add margin to give space */
 }
 
 
-#vis1, #vis2 {
+#vis1, #vis2, #vis3, #vis4, #vis5 {
   margin-top: 40px;
   border: 1px solid #ddd;
   padding: 20px;
