@@ -38,22 +38,7 @@ h1 {
   padding-bottom: 15px; 
   padding-left: 25px;   
 }
-/* Background colors for each visualization */
-#vis1 {
-  background-color: #faebd7;  /* Antique white */
-}
 
-#vis2 {
-  background-color: #faebd7;  /* Antique white */
-}
-
-#vis3 {
-  background-color: #faebd7;  /* Antique white */
-}
-
-#vis4 {
-  background-color: #faebd7;  /* Antique white */
-}
 
 .limited-width {
   max-width: 500px;  /* Adjust this width for roughly 10 words per line */
